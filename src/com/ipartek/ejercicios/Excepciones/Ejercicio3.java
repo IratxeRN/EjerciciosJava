@@ -28,7 +28,7 @@ public class Ejercicio3 {
 
 		String texto;
 		int num = 0;
-		String letra;
+		char letra;
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introduce un texto");
