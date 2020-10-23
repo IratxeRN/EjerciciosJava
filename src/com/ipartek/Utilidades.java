@@ -97,7 +97,7 @@ public class Utilidades implements IFunciones {
 
 		float vueltas = dineroEntregado - precioProducto;
 
-		if (precioProducto < precioProducto) {
+		if (dineroEntregado < precioProducto) {
 			throw new Exception("Falta dinero");
 		}
 

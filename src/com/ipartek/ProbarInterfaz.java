@@ -5,7 +5,18 @@ import java.util.Scanner;
 public class ProbarInterfaz {
 
 	public static void main(String[] args) throws Exception {
+		// TODO hacer las exceptions
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce el dinero entregado");
+		float entregado = Float.parseFloat(sc.nextLine());
+		System.out.println("Introduce el precio del producto");
+		float precio = Float.parseFloat(sc.nextLine());
+		//////////////////////////////
+		Utilidades util3 = new Utilidades();
 
+		System.out.println(util3.calcularVueltas(precio, entregado));
+
+///////////////////////////////////////////		
 		Utilidades util = new Utilidades();
 		try {
 			String nombre = util.pedirNombre();
@@ -17,7 +28,7 @@ public class ProbarInterfaz {
 
 /////////
 		Utilidades util2 = new Utilidades();
-		Scanner sc = new Scanner(System.in);
+
 		try {
 			System.out.println("Elegir loteria:\n 1- BONOLOTO\n 2- QUINIELA\n 3- EUROMILLON");
 			int loto = Integer.parseInt(sc.nextLine());

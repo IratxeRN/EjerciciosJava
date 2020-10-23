@@ -5,6 +5,7 @@ public class Perro {
 	// Atributos, deben ser siempre privados
 	// la forma de manipular estos atributos es a traves de los getteres y settres
 	///////////////////////////////////////
+	private int id; // TODO getter setreers y contructor toString
 	private String nombre;
 	private String raza;
 	private float peso;
@@ -19,23 +20,23 @@ public class Perro {
 		this.raza = "Cruce";
 		this.peso = 0f;
 		this.isVacunado = false;
-		this.historia = "A";
+		this.historia = "Erase una vez....";
 	}
 
-	/// otro constructor sobrecargado
+	// otro constructor sobrecargado
 
 	public Perro(String nombre) {
-		this(); // llama al constructor por defecto, pulsar ctrol+click
+		this(); // llama al constructor por defecto, pulsar Control + click
 		this.nombre = nombre;
-
 	}
 
-	public Perro(String nombre, float peso) {
-		this(); // llama al constructor por defecto, pulsar ctrol+click
+	public Perro(String nombre, String raza, float peso) {
+		this(); // Cuidado no poner super
 		this.nombre = nombre;
+		this.raza = raza;
 		this.peso = peso;
-
 	}
+
 	// Getters y setters
 	///////////////////////////////////////
 
@@ -88,5 +89,7 @@ public class Perro {
 		return "Perro [nombre=" + nombre + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado
 				+ ", historia=" + historia + "]";
 	}
+
+	// Otros metodos
 
 }
