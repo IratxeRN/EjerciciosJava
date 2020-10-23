@@ -22,7 +22,7 @@ public class Ejercicio1 {
 
 		int a = 6;
 		int b = 8;
-		int c = 0;
+		int c = 1;
 		int d = 8;
 		int e = 9;
 		int max = 0;
@@ -42,7 +42,7 @@ public class Ejercicio1 {
 
 		// MAX Y MIN
 
-		int num[] = { 6, 8, 0, 8, 9 };
+		int num[] = { 6, 8, 1, 8, 9 };
 
 		for (int i = 0; i < num.length; i++) {
 			if (num[i] < min) {

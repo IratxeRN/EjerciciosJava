@@ -28,7 +28,7 @@ public class Game {
 	}
 
 	public void setTitulo(String titulo) throws Exception {
-		if (desarrollador == null) {
+		if (titulo.isEmpty()) {
 			throw new Exception("Debe rellenar el dato");
 		}
 		this.titulo = titulo;
@@ -41,9 +41,6 @@ public class Game {
 	public void setYear(int year) throws Exception {
 		if (year < 1930 || year > 2030) {
 			throw new Exception("El año no es valido. Debe in entre 1930 y 2030");
-		}
-		if (desarrollador.isEmpty()) {
-			throw new Exception("Debe rellenar el dato");
 		}
 		this.year = year;
 	}

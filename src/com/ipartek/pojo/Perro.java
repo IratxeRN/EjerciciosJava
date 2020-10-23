@@ -30,6 +30,12 @@ public class Perro {
 
 	}
 
+	public Perro(String nombre, float peso) {
+		this(); // llama al constructor por defecto, pulsar ctrol+click
+		this.nombre = nombre;
+		this.peso = peso;
+
+	}
 	// Getters y setters
 	///////////////////////////////////////
 
@@ -75,6 +81,12 @@ public class Perro {
 
 	public void setHistoria(String historia) {
 		this.historia = historia;
+	}
+
+	@Override
+	public String toString() {
+		return "Perro [nombre=" + nombre + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado
+				+ ", historia=" + historia + "]";
 	}
 
 }

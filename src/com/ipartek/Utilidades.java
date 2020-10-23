@@ -1,6 +1,10 @@
 package com.ipartek;
 
-public class Utilidades {
+import java.util.Scanner;
+
+import com.ipartek.pojo.Serie;
+
+public class Utilidades implements IFunciones {
 
 	static final char LETRAS_DNI[] = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S',
 			'Q', 'V', 'H', 'L', 'C', 'K', 'E' };
@@ -33,6 +37,78 @@ public class Utilidades {
 		}
 
 		return numeros + letra;
+	}
+
+	/**
+	 * PEDIR NOMBRE. Implementado de IFunciones
+	 */
+	@Override
+	public String pedirNombre() throws Exception {
+
+		Scanner sc = new Scanner(System.in);
+		String nombre = "";
+
+		System.out.println("Introduce tu nombre: ");
+		nombre = sc.nextLine();
+		sc.close();
+
+		if (nombre.length() <= 1) {
+			// throw new Exception("El nombre debe tener mas de una letra");
+			System.out.println("El nombre debe tener mas de una letra");
+		}
+		// recorremos el String para ver si es letra o numero
+		for (int i = 0; i < nombre.length(); i++) {
+			char letra = nombre.charAt(i);
+			boolean isNumber = Character.isDigit(letra);
+			if (isNumber) {
+				throw new Exception("No puede ser numero");
+			}
+		}
+
+		return nombre;
+	}
+
+///////////////////////////////////////////////////////////////////////////
+	@Override
+	public void imprimirNumeroLoteria(int loto) throws Exception {
+
+		switch (loto) {
+		case LOTERIA_EUROMILLON: {
+			System.out.println("El numero del Euromillon es 111111111");
+			break;
+		}
+		case LOTERIA_QUINIELA: {
+			System.out.println("El numero del Quiniela es 111111111");
+			break;
+		}
+		case LOTERIA_BONOLOTO: {
+			System.out.println("El numero del Bonoloto es 111111111");
+			break;
+		}
+		default:
+			throw new IllegalArgumentException("No ha elegido la opcion correcta");
+		}
+
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+	@Override
+	public float calcularVueltas(float dineroEntregado, float precioProducto) throws Exception {
+
+		float vueltas = dineroEntregado - precioProducto;
+
+		if (precioProducto < precioProducto) {
+			throw new Exception("Falta dinero");
+		}
+
+		return vueltas;
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+	@Override
+	public Serie pedirDatosPorConsola() {
+
+		return null;
 	}
 
 }

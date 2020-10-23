@@ -1,5 +1,7 @@
 package com.ipartek.ejercicios.Excepciones;
 
+import java.util.Scanner;
+
 import com.ipartek.pojo.Persona;
 
 /**
@@ -15,29 +17,57 @@ import com.ipartek.pojo.Persona;
  * de<br>
  * edad indicado, comprobándolo mediante el uso de excepciones<br>
  * 
+ * Clase PERSONA
+ * 
  * @author Leshou
  *
  */
 
 public class Ejercicio4 {
 
+	public static int NUM_PERSONAS = 1;
+
 	public static void main(String[] args) throws Exception {
 
-		try {
-			Persona p1 = new Persona();
-			p1.setNombre("Pepe");
-			p1.setEdad(10);
-			System.out.println(p1.getNombre() + " " + p1.getEdad() + " años.");
+		String nombre = "";
+		int edad = 0;
+		boolean isError = true;
+		Scanner sc = new Scanner(System.in);
+		Persona p[] = new Persona[NUM_PERSONAS];
+		// ArrayList<Persona> personas = new ArrayList<Persona>();
 
-			Persona p2 = new Persona();
-			p2.setNombre("Kk");
-			p2.setEdad(200);
-			System.out.println(p2.getNombre() + " " + p2.getEdad() + " años.");
+		do {
 
-		} catch (Exception e) {
-			System.out.println("Excepcion: " + e.getMessage());
-		}
+			try {
 
+				for (int i = 0; i < NUM_PERSONAS; i++) {
+
+					System.out.println("Introduce el nombre de la persona: ");
+					nombre = sc.nextLine();
+					System.out.println("Introduce la edad de la persona: ");
+					edad = Integer.parseInt(sc.nextLine());
+					p[i] = new Persona();
+					p[i].setNombre(nombre);
+					p[i].setEdad(edad);
+					isError = false;
+				}
+
+				for (int i = 0; i < p.length; i++) {
+
+					System.out.println(p);// son iguales. Va junto con al .toString de la clase Persona
+					System.out.println(p.toString());// son iguales. Va junto con al .toString de la clase Persona
+
+					System.out.println("*- " + p[i].getNombre() + " " + p[i].getEdad() + " años.\n");
+				}
+
+			} catch (Exception e) {
+				isError = true;
+				System.out.println("Excepcion: " + e.getMessage());
+
+			}
+
+		} while (isError);
+		sc.close();
 	}
 
 }

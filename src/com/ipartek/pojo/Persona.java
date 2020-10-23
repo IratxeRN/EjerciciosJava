@@ -1,12 +1,14 @@
 package com.ipartek.pojo;
 
 public class Persona {
+	// constantes, se le aplica el valor final porque no se pueden modificar
 	public static final int EDAD_MIN = 0;
 	public static final int EDAD_MAX = 120;
-
+//atributos
 	private String nombre;
 	private int edad;
 
+//constructor vacio
 	public Persona() {
 		super();
 		this.nombre = "";
@@ -15,8 +17,8 @@ public class Persona {
 
 	public Persona(String nombre, int edad) {
 		this();
-		this.nombre = "";
-		this.edad = 0;
+		this.nombre = nombre;
+		this.edad = edad;
 	}
 
 	public String getNombre() {
@@ -37,4 +39,10 @@ public class Persona {
 		}
 		this.edad = edad;
 	}
+
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", edad=" + edad + "]"; // para que al hacer un .toString
+	}
+
 }
