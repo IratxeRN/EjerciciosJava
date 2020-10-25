@@ -5,20 +5,27 @@ import java.util.Scanner;
 public class Excepcion {
 
 	public static void main(String[] args) {
-		int num = 0;
-		Scanner sc = new Scanner(System.in);
-		try {
 
-			System.out.println("Dime un num");
-			num = Integer.parseInt(sc.nextLine());
+		Scanner sc = new Scanner(System.in);
+
+		System.out.printf("Dime un numero:");
+
+		try {
+			int numero = Integer.parseInt(sc.nextLine());
+
+			// si la linea de arriba lanza excepcion, estas de abajo unca se ejecutaran
+			System.out.println("Tu numero es: " + numero);
 
 		} catch (Exception e) {
-			e.printStackTrace(); // es solo para controlar el erro. No suele ir aqui.
-			System.out.println("Error. No es un numero: " + num);
+			// si quereis ver la traza de la Excepcion, usar e.printStackTrace()
+			e.printStackTrace();
+			System.out.println("Lo siento pero no es un numero valido");
 
-		} finally { // no es obligatorio
+		} finally {// no es obligatorio
 			sc.close();
-			System.out.println("Cerramos escaner.");
+			System.out.println("cerramos escaner, agur");
 		}
-	}
+
+	}// main
+
 }

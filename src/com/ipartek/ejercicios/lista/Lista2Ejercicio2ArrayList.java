@@ -1,5 +1,6 @@
 package com.ipartek.ejercicios.lista;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -24,38 +25,56 @@ import java.util.Scanner;
  * @author Leshou
  *
  */
-public class Lista2Ejercicio1 {
+public class Lista2Ejercicio2ArrayList {
+
+	private static int CANTIDAD = 8;
+	private static int TEMP_MAX = 75;
+	private static int TEMP_MIN = -90;
 
 	public static void main(String[] args) {
 
-		// int temperatura[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-		int temperatura[] = { 0, 0, 0, 0 };
+		ArrayList<Integer> listasTemp = new ArrayList<Integer>();
+
 		int suma = 0;
 		int max = 0;
 		int min = 0;
 		float media = 0;
-
+		int result = 0;
+		boolean isError = true;
 		Scanner sc = new Scanner(System.in);
-		// TODO el bucle.
+
 		try {
 
-			for (int i = 0; i < temperatura.length; i++) {
-				System.out.printf("Introducir temperatura %s: ", i + 1);
-				temperatura[i] = Integer.parseInt(sc.nextLine());
-				suma += temperatura[i];
+			for (int i = 0; i < CANTIDAD; i++) {
 
-				if (max < temperatura[i]) {
-					max = temperatura[i];
-				}
-			}
+				do {
+					System.out.printf("Introducir temperatura %s: ", i + 1);
+					result = Integer.parseInt(sc.nextLine());
 
-			min = temperatura[0];
-			for (int i = 0; i < temperatura.length; i++) {
-				if (min >= temperatura[i]) {
-					min = temperatura[i];
-				}
-			}
-			media = suma / 8;
+					if (result >= -90 && result <= 75) {
+						listasTemp.add(result);
+						suma += result;
+						isError = false;
+
+					} else {
+						System.out.printf("Introducir temperatura entre %s y %s: ", TEMP_MIN, TEMP_MAX);
+					}
+
+				} while (isError);
+
+				if (max < listasTemp.get(i)) {
+					max = listasTemp.get(i);
+				} // iff
+			} // for
+
+			min = listasTemp.get(0);
+			for (int i = 0; i < CANTIDAD; i++) {
+				if (min > listasTemp.get(i)) {
+					min = listasTemp.get(i);
+				} // iff
+			} // for
+
+			media = suma / CANTIDAD;
 
 			System.out.printf("La temperatura mas alta es %s \n", max);
 			System.out.printf("La temperatura mas baja es %s: \n", min);
@@ -65,14 +84,14 @@ public class Lista2Ejercicio1 {
 			System.out.printf("Diferencia entre temperatura max y min %s: \n", max - min);
 
 		} catch (NumberFormatException e) {
-			System.out.printf("Debe introducir una cifra \n", max);
+			System.out.printf("Debe introducir una cifra \n");
 
 		} catch (Exception e) {
-			System.out.printf("Error \n", max);
-		}
+			System.out.printf("Error \n");
+		} // catch
 
 		sc.close();
 
-	}
+	}// main
 
-}
+}// class

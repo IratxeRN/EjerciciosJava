@@ -44,6 +44,8 @@ public class Ejercicio2 {
 
 			} // catch Exception
 		} while (isError);
+
+		// 2º numero, Bucle para repetir hasta que no haya error
 		isError = true;
 
 		do {
@@ -63,7 +65,6 @@ public class Ejercicio2 {
 
 			} // catch Exception
 		} while (isError);
-		isError = true;
 
 		System.out.printf("Tus numeros son %s y %s", num1, num2);
 

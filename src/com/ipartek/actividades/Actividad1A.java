@@ -25,7 +25,7 @@ public class Actividad1A {
 		double suma = 0;
 		double media = 0;
 		double max = 0;
-		double min = 300;
+		double min = 0;
 
 		Scanner sc = new Scanner(System.in);
 
@@ -41,11 +41,15 @@ public class Actividad1A {
 					max = nota[i];
 				}
 
+			}
+
+			min = nota[0];
+			for (int i = 0; i < nota.length; i++) {
 				if (min > nota[i]) {
 					min = nota[i];
 				}
-
 			}
+
 			for (int i = 0; i < nota.length; i++) {
 
 				System.out.printf("La nota %s es %s \n", i + 1, nota[i]);

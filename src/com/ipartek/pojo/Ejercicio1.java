@@ -1,6 +1,4 @@
-package com.ipartek.pojo.Ejercicios;
-
-import com.ipartek.pojo.Perro;
+package com.ipartek.pojo;
 
 /**
  * La historia de los 8 perros mas famosos Crear 8 perros con su constructor por
