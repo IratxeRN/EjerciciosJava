@@ -35,12 +35,13 @@ public class EjercicioElectrodomesticosAnder {
 
 		for (Electrodomestico elec : lista) {
 
-			// TODO en vez de usar syso, castear y mostrar datos con getters
-			// System.out.println(elec.toString());
+			// hay que perguntar siempre con instnaceof.
+			// no ncesitamos poner un instanceof de Electrodomesticos porque es la clase
+			// padre
 			System.out.println(elec.getNombre());
-
 			System.out.println(elec.getPrecio());
 
+			// para seleccionar los objetos de cada clase (normalmente hijas)
 			if (elec instanceof Televisor) {
 
 				// podemos castear usando (Television) y asi nos permite acceder a los metodos

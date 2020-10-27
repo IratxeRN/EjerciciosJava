@@ -39,8 +39,8 @@ public class ProbarInterfaz {
 
 ////////////////////////////		
 //TODO mirar por que falla. Posiblemente por tema scanner
-		Serie s= util.pedirDatosPorConsola());
-		System.out.println("Tu serie es " + s);
+//		Serie s= util.pedirDatosPorConsola());
+//System.out.println("Tu serie es " + s);
 
 	}
 }

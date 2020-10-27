@@ -12,6 +12,16 @@ public class TelevisionPlana extends Televisor {
 		super();
 	}
 
+	public TelevisionPlana(String pantalla) {
+		super();
+		this.pantalla = pantalla;
+	}
+
+	public TelevisionPlana(String nombre, int precio, int pulgadas, String pantalla) {
+		super(nombre, precio, pulgadas);
+		this.pantalla = pantalla;
+	}
+
 	public String getPantalla() {
 		return pantalla;
 	}
@@ -24,7 +34,7 @@ public class TelevisionPlana extends Televisor {
 	public String toString() {
 		return "TelevisionPlana [pantalla=" + pantalla + ", getPulgadas()=" + getPulgadas() + ", toString()="
 				+ super.toString() + ", getNombre()=" + getNombre() + ", getPrecio()=" + getPrecio() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + "]";
+				+ getClass() + "]";
 	}
 
 	/**
