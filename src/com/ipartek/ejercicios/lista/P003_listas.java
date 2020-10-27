@@ -64,10 +64,13 @@ public class P003_listas {
 	static ArrayList<PrendaVestir> listaPrendas = new ArrayList<PrendaVestir>();
 	static double total = 0;
 
-	public static void main(String[] args) {
+	static boolean isYes = true;
+	static String sn = "";
 
-		boolean isYes = true;
-		String sn = "";
+	private static double DESCUENTO1 = 0.01;
+	private static double DESCUENTO2 = 0.02;
+
+	public static void main(String[] args) {
 
 		sc = new Scanner(System.in);
 
@@ -90,9 +93,29 @@ public class P003_listas {
 
 		} while (isYes);
 
-		mostrarProductos();
-//TODO resto
+		double total = mostrarProductos();
+
+		sn = "";
+		System.out.println("Esta todo correcto? : S/N");
+		sn = sc.nextLine();
+
+		if ("S".equalsIgnoreCase(sn)) { // si esta correcto hace descuentos y saca por pantalla
+
+			calcularDescuentos(total);
+
+		} else if ("N".equalsIgnoreCase(sn)) { // no correcto, corregir fallo
+
+			System.out.println("Cual es el numero de articulo que no es correcto?");
+			int posicion = listaPrendas.indexOf(Integer.parseInt(sc.nextLine()));
+			System.out.println(listaPrendas.get(posicion));
+//TODO terminar la parte de modificar
+		} else {
+
+			System.out.println("Dato erroneo. Debe introducir S o N.\n");
+		}
+
 		sc.close();
+
 	}// main
 
 ///// AÑADIR LOS PRODUCTOS
@@ -119,14 +142,30 @@ public class P003_listas {
 	private static double mostrarProductos() {
 
 		System.out.printf("Cantidad de articulos: %s\n", listaPrendas.size());
-
+		int i = 1;
 		for (PrendaVestir prenda : listaPrendas) {
-			prenda.mostrarDatoProducto();
+
+			System.out.println(i + prenda.mostrarDatoProducto());
+			i++;
 			total += prenda.getPrecio();
 		}
 		System.out.printf("Total: %s€\n", total);
 		return total;
 
 	}// mostrar
+
+	private static void calcularDescuentos(double total) {
+
+		if (total > 120) {
+			total = total - (total * 0.01);
+			System.out.printf("Cargando importe a targeta de crédito: %s, aplicado un descuento 10 ", total);
+		} else if (total > 180) {
+			total = total - (total * 0.02);
+			System.out.printf("Cargando importe a targeta de crédito: %s, aplicado un descuento 20 ", total);
+		} else {
+			System.out.printf("Cargando importe a targeta de crédito: %s", total);
+		}
+
+	}
 
 }// class

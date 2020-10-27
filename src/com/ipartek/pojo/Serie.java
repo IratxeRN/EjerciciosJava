@@ -24,7 +24,7 @@ public class Serie {
 	private String plataforma = "";
 
 	public Serie(String nombre) {
-		super();
+		super();// llamamos al constructor del padre que es java.lang.Object
 		this.nombre = nombre;
 		this.numTemp = 0;
 		this.duracion = 0;

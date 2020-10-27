@@ -106,9 +106,24 @@ public class Utilidades implements IFunciones {
 
 //////////////////////////////////////////////////////////////////////////////////////////
 	@Override
+	// TODO mirar por que falla el Scanner
 	public Serie pedirDatosPorConsola() {
 
-		return null;
+		Scanner sc = new Scanner(System.in);
+		Serie serie = new Serie("");// hay que inicializarlo asi porque el dato nombre no lo tengo
+
+		System.out.println("Nombre");
+		serie.setNombre(sc.nextLine());
+
+		System.out.println("Temporadas");
+		serie.setNumTemp(Integer.parseInt(sc.nextLine()));
+
+		System.out.println("Nombre");
+		serie.setNombre(sc.nextLine());
+//TODO solo pedir los datos
+
+		sc.close();
+		return serie;
 	}
 
 }

@@ -41,8 +41,14 @@ public class PrendaVestir {
 		this.precio = precio;
 	}
 
-	public void mostrarDatoProducto() {
-		System.out.printf("- %s de la talla %s, %s€\n", getProducto(), getTalla(), getPrecio());
+	/**
+	 * public void mostrarDatoProducto() { System.out.printf("- %s de la talla %s,
+	 * %s€\n", getProducto(), getTalla(), getPrecio());
+	 * 
+	 * }
+	 */
+	public String mostrarDatoProducto() {
+		return "-" + producto + " de la talla " + talla + " - " + precio + "€";
 
 	}
 

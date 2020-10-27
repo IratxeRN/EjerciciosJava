@@ -15,7 +15,7 @@ public class ProbarInterfaz {
 		Utilidades util3 = new Utilidades();
 
 		System.out.println(util3.calcularVueltas(precio, entregado));
-
+		sc.close();
 ///////////////////////////////////////////		
 		Utilidades util = new Utilidades();
 		try {
@@ -38,7 +38,9 @@ public class ProbarInterfaz {
 		}
 
 ////////////////////////////		
+//TODO mirar por que falla. Posiblemente por tema scanner
+		Serie s= util.pedirDatosPorConsola());
+		System.out.println("Tu serie es " + s);
 
-		sc.close();
 	}
 }
