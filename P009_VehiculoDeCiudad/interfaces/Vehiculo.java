@@ -20,7 +20,7 @@ public interface Vehiculo {
 	 * @throws Solo acelerara si esta encendido
 	 * @param incrementoVel
 	 */
-	void Acelerar(int incrementoVel);
+	int Acelerar(int incrementoVel) throws Exception;
 
 	/**
 	 * decrementara la velocidad actual con el valor que se le pasa por parámetro
@@ -29,7 +29,7 @@ public interface Vehiculo {
 	 * @throws No puede llegar a bajar de 0. Solo frenara si esta encendido
 	 * @param decrementoVel
 	 */
-	void Frenar(int decrementoVel);
+	int Frenar(int decrementoVel) throws Exception;
 
 	/**
 	 * pondrá el atributo estaArrancado a false,

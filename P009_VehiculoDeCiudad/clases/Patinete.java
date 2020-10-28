@@ -43,23 +43,40 @@ public class Patinete implements Vehiculo {
 	///////////// METODOS DEL INTERFACE
 	@Override
 	public void Arrancar() {
+
+		if (!estaArrancado) {
+			estaArrancado = false;
+		}
 	}
 
 	@Override
-	public void Acelerar(int incrementoVel) {
-		// TODO Auto-generated method stub
+	public int Acelerar(int incrementoVel) throws Exception {
 
+		if (velocidadActual <= VEL_MAX_PATINETE) {
+			velocidadActual += incrementoVel;
+		} else {
+			throw new Exception("No se puede acelerar mas");
+		}
+
+		return velocidadActual;
 	}
 
 	@Override
-	public void Frenar(int decrementoVel) {
-		// TODO Auto-generated method stub
+	public int Frenar(int decrementoVel) throws Exception {
 
+		if (velocidadActual >= 0) {
+			velocidadActual -= decrementoVel;
+		} else {
+			throw new Exception("No se puede acelerar mas");
+		}
+
+		return velocidadActual;
 	}
 
 	@Override
 	public void Apagar() {
-		// TODO Auto-generated method stub
+
+		estaArrancado = false;
 
 	}
 

@@ -13,7 +13,7 @@ import com.ipartek.pojo.Carta;
  * Crear la baraja con las cartas ordenadas por palos, y luego por números. <br>
  * Barajar dicha baraja y mostrar las cartas.
  * 
- * @author Leshou
+ * @author Iratxe Reguera
  *
  */
 
