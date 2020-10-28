@@ -37,46 +37,58 @@ public class Patinete implements Vehiculo {
 
 	@Override
 	public String toString() {
-		return "Patinete [velocidadActual=" + velocidadActual + ", estaArrancado=" + estaArrancado + "]";
+		String onOff = "";
+		if (estaArrancado) {
+			onOff = "Arrancado";
+		} else {
+			onOff = "Apagado";
+		}
+		return "Soy un Patinete, estoy " + onOff + " y mi velocidad actual es " + velocidadActual;
 	}
 
 	///////////// METODOS DEL INTERFACE
 	@Override
 	public void Arrancar() {
-
 		if (!estaArrancado) {
-			estaArrancado = false;
+			estaArrancado = true;
+		}
+
+	}
+
+	@Override
+	public void Acelerar(int incrementoVel) throws Exception {
+
+		if (estaArrancado) {
+
+			if (incrementoVel <= VEL_MAX_PATINETE) {
+				this.velocidadActual = incrementoVel;
+			} else {
+				System.out.println("No se puede acelerar mas");
+			}
+		} else {
+			throw new Exception("Debe arrancar el motor");
 		}
 	}
 
 	@Override
-	public int Acelerar(int incrementoVel) throws Exception {
+	public void Frenar(int decrementoVel) throws Exception {
+		if (estaArrancado) {
 
-		if (velocidadActual <= VEL_MAX_PATINETE) {
-			velocidadActual += incrementoVel;
+			if (decrementoVel >= VEL_MIN && decrementoVel <= VEL_MAX_PATINETE) {
+				this.velocidadActual = decrementoVel;
+			} else {
+				throw new Exception("No se puede frenar mas");
+			}
 		} else {
-			throw new Exception("No se puede acelerar mas");
+			throw new Exception("Debe arrancar el motor");
 		}
-
-		return velocidadActual;
-	}
-
-	@Override
-	public int Frenar(int decrementoVel) throws Exception {
-
-		if (velocidadActual >= 0) {
-			velocidadActual -= decrementoVel;
-		} else {
-			throw new Exception("No se puede acelerar mas");
-		}
-
-		return velocidadActual;
 	}
 
 	@Override
 	public void Apagar() {
-
-		estaArrancado = false;
+		if (velocidadActual == 0) {
+			estaArrancado = false;
+		}
 
 	}
 
