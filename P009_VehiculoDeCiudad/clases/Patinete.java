@@ -1,8 +1,8 @@
 package clases;
 
-import interfaces.Vehiculo;
+import interfaces.IVehiculo;
 
-public class Patinete implements Vehiculo {
+public class Patinete implements IVehiculo {
 
 	int velocidadActual;
 	boolean estaArrancado;
@@ -17,6 +17,12 @@ public class Patinete implements Vehiculo {
 		this();
 		this.velocidadActual = velocidadActual;
 		this.estaArrancado = estaArrancado;
+
+	}
+
+	public Patinete(int velocidadActual) {
+		this();
+		this.velocidadActual = velocidadActual;
 	}
 
 	public int getVelocidadActual() {
@@ -48,34 +54,34 @@ public class Patinete implements Vehiculo {
 
 	///////////// METODOS DEL INTERFACE
 	@Override
-	public void Arrancar() {
-		if (!estaArrancado) {
-			estaArrancado = true;
+	public void arrancar() {
+		if (!this.estaArrancado) {
+			this.estaArrancado = true;
 		}
 
 	}
 
 	@Override
-	public void Acelerar(int incrementoVel) throws Exception {
+	public void acelerar(int incrementoVel) throws Exception {
 
-		if (estaArrancado) {
-
-			if (incrementoVel <= VEL_MAX_PATINETE) {
-				this.velocidadActual = incrementoVel;
+		if (this.isEstaArrancado()) {
+			int nuevaVelocidad = this.getVelocidadActual() + incrementoVel;
+			if (nuevaVelocidad <= VEL_MAX_PATINETE) {
+				this.velocidadActual += incrementoVel;
 			} else {
-				System.out.println("No se puede acelerar mas");
+				this.setVelocidadActual(nuevaVelocidad);
 			}
 		} else {
-			throw new Exception("Debe arrancar el motor");
+			this.setVelocidadActual(this.getVelocidadActual());
 		}
 	}
 
 	@Override
-	public void Frenar(int decrementoVel) throws Exception {
-		if (estaArrancado) {
-
-			if (decrementoVel >= VEL_MIN && decrementoVel <= VEL_MAX_PATINETE) {
-				this.velocidadActual = decrementoVel;
+	public void frenar(int decrementoVel) throws Exception {
+		if (this.isEstaArrancado()) {
+			int nuevaVelocidad = this.getVelocidadActual() + decrementoVel;
+			if (nuevaVelocidad >= VEL_MIN && nuevaVelocidad <= VEL_MAX_PATINETE) {
+				this.velocidadActual -= decrementoVel;
 			} else {
 				throw new Exception("No se puede frenar mas");
 			}
@@ -85,7 +91,7 @@ public class Patinete implements Vehiculo {
 	}
 
 	@Override
-	public void Apagar() {
+	public void apagar() {
 		if (velocidadActual == 0) {
 			estaArrancado = false;
 		}

@@ -1,23 +1,26 @@
 package principal;
 
-import clases.Patinete;
+import clases.PatineteCorregido;
 
 public class VehiculosDeCiudad {
 
 	public static void main(String[] args) throws Exception {
 
-		Patinete patinete = new Patinete();
+		PatineteCorregido patinete = new PatineteCorregido();
 
-		patinete.Arrancar();
+		patinete.arrancar();
 		System.out.println(patinete.toString());
 
-		patinete.Acelerar(30);
+		patinete.acelerar(30);
 		System.out.println(patinete.toString());
 
-		patinete.Frenar(0);
+		patinete.arrancar();
 		System.out.println(patinete.toString());
 
-		patinete.Apagar();
+		patinete.frenar(0);
+		System.out.println(patinete.toString());
+
+		patinete.apagar();
 		System.out.println(patinete.toString());
 
 	}
