@@ -107,8 +107,9 @@ public class P003_listas {
 
 			System.out.println("Cual es el numero de articulo que no es correcto?");
 			int posicion = listaPrendas.indexOf(Integer.parseInt(sc.nextLine()));
-			System.out.println(listaPrendas.get(posicion));
+			System.out.println(listaPrendas.get(posicion - 1));
 //TODO terminar la parte de modificar
+
 		} else {
 
 			System.out.println("Dato erroneo. Debe introducir S o N.\n");
