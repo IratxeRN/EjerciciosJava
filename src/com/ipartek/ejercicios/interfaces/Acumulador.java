@@ -23,11 +23,11 @@ public class Acumulador implements IModificacion, Cloneable, Serializable {
 		return "Acumulador [valor=" + valor + "]";
 	}
 
-	@Override
-	public void incremento(int a) {
-		this.valor += a;
-
-	}
+	/**
+	 * @Override public void incremento(int a) { this.valor += a;
+	 * 
+	 *           }
+	 **/
 
 	@Override
 	public void incremento() {
