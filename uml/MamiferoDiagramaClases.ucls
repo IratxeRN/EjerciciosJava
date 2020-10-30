@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.ipartek.ejercicios.herencia.Perro" project="Ejercicios" 
-    file="/Ejercicios/src/com/ipartek/ejercicios/herencia/Perro.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="com.ipartek.ejercicios.herencia.Perro2" project="Ejercicios" 
+    file="/Ejercicios/src/com/ipartek/ejercicios/herencia/Perro2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="241" y="291"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -38,16 +38,16 @@
     </display>  
   </class>  
   <generalization id="5">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="6">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="7">    
+  <generalization id="6">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="7">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

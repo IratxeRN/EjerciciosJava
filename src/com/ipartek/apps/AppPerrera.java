@@ -1,12 +1,17 @@
 package com.ipartek.apps;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.ipartek.modelo.PerroDAOSqlite;
+import com.ipartek.modelo.PerroDao;
+import com.ipartek.pojo.Perro;
 
 public class AppPerrera {
 
 	// variables globales para esta Clase
 	static private Scanner sc = null;
-	// static private PerroDAOArrayList modelo = new PerroDAOArrayList();
+	static private PerroDao modelo = new PerroDAOSqlite();
 	static private String opcion = ""; // opcion seleccionada en el menu por el usuario
 
 	// opciones del menu
@@ -51,12 +56,13 @@ public class AppPerrera {
 	}// main
 
 	private static void listar() {
-		/**
-		 * // TODO ver como dar una fixed lenght al String para nombre ArrayList<Perro>
-		 * perros = modelo.listar(); for (Perro perro : perros) {
-		 * System.out.println(String.format("%15s [%s] %s Kg", perro.getNombre(),
-		 * perro.getRaza(), perro.getPeso())); }
-		 **/
+
+		// TODO ver como dar una fixed lenght al String para nombre
+		ArrayList<Perro> perros = modelo.listar();
+		for (Perro perro : perros) {
+			System.out.println(String.format("%15s [%s]  %s Kg", perro.getNombre(), perro.getRaza(), perro.getPeso()));
+		}
+
 	}
 
 	/**

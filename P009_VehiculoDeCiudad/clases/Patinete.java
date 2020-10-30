@@ -2,7 +2,7 @@ package clases;
 
 import interfaces.IVehiculo;
 
-public class Patinete implements IVehiculo {
+public class Patinete implements IVehiculo, AutoCloseable {
 
 	int velocidadActual;
 	boolean estaArrancado;
@@ -95,6 +95,12 @@ public class Patinete implements IVehiculo {
 		if (velocidadActual == 0) {
 			estaArrancado = false;
 		}
+
+	}
+
+	@Override
+	public void close() throws Exception {
+		// TODO Auto-generated method stub
 
 	}
 
