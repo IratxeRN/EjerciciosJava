@@ -88,8 +88,8 @@ public class Perro extends Mamifero {
 
 	@Override
 	public String toString() {
-		return "Perro [id=" + id + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado + ", historia="
-				+ historia + ", getNombre()=" + getNombre() + ", getPatas()=" + getPatas() + "]";
+		return "Perro [id=" + id + ", Nombre=" + getNombre() + ", raza=" + raza + ", peso=" + peso + ", isVacunado="
+				+ isVacunado + ", historia=" + historia + ", Patas()=" + getPatas() + "]";
 	}
 
 	// Otros metodos

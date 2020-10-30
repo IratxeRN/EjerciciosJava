@@ -14,7 +14,7 @@ public class PerroDAOSqlite implements PerroDao {
 
 	@Override
 	public ArrayList<Perro> listar() {
-		final String SQL = "SELECT id, nombre FROM perro ORDER BY nombre ASC;";
+		final String SQL = "SELECT id, nombre, raza, peso, vacunado, historia FROM perro ORDER BY nombre ASC;";
 		ArrayList<Perro> perros = new ArrayList<Perro>();
 
 		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + PATH);
@@ -26,11 +26,11 @@ public class PerroDAOSqlite implements PerroDao {
 				Perro p = new Perro();
 				p.setId(rs.getInt("id"));
 				p.setNombre(rs.getString("nombre"));
-				/*
-				 * p.setRaza( rs.getString("raza")); p.setPeso( rs.getFloat("peso"));
-				 * p.setVacunado( rs.getBoolean("vacunado")); p.setHistoria(
-				 * rs.getString("historia"));
-				 */
+				p.setRaza(rs.getString("raza"));
+				p.setPeso(rs.getFloat("peso"));
+				p.setVacunado(rs.getBoolean("vacunado"));
+				p.setHistoria(rs.getString("historia"));
+
 				perros.add(p);
 
 			} // while
@@ -43,8 +43,9 @@ public class PerroDAOSqlite implements PerroDao {
 
 	@Override
 	public Perro recuperar(int id) {
+
 		Perro perro = null;
-		final String SQL = "SELECT id, nombre FROM perro WHERE id = ?;";
+		final String SQL = "SELECT id, nombre, raza, peso, vacunado, historia FROM perro WHERE id = ?;";
 
 		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + PATH);
 				PreparedStatement pst = conn.prepareStatement(SQL);) {
@@ -56,6 +57,11 @@ public class PerroDAOSqlite implements PerroDao {
 					perro = new Perro();
 					perro.setId(rs.getInt("id"));
 					perro.setNombre(rs.getString("nombre"));
+					perro.setRaza(rs.getString("raza"));
+					perro.setPeso(rs.getFloat("peso"));
+					perro.setVacunado(rs.getBoolean("vacunado"));
+					perro.setHistoria(rs.getString("historia"));
+
 				} // while
 			} // 2º try
 
@@ -68,12 +74,15 @@ public class PerroDAOSqlite implements PerroDao {
 	@Override
 	public Perro crear(Perro p) throws Exception {
 		Perro perro = null;
-		final String SQL = "INSERT INTO perro (nombre, peso) VALUES (?, ?);";
+		final String SQL = "INSERT INTO perro (nombre, peso, raza, vacunado, historia) VALUES (?, ?);";
 		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + PATH);
 				PreparedStatement pst = conn.prepareStatement(SQL);) {
 
 			pst.setString(1, p.getNombre());
-			pst.setFloat(2, p.getPeso());
+			pst.setString(2, p.getRaza());
+			pst.setFloat(3, p.getPeso());
+			pst.setBoolean(4, p.isVacunado());
+			pst.setString(2, p.getHistoria());
 
 			pst.executeUpdate(); // CUIDADO no usar executeQuery
 
