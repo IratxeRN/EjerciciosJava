@@ -73,8 +73,38 @@ public class PerroDAOSqlite implements PerroDao {
 
 	@Override
 	public Perro crear(Perro p) throws Exception {
+		final String SQL = "INSERT INTO perro (nombre,raza,peso, vacunado, historia) VALUES (?, ?, ?,?,?);";
+
+		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + PATH);
+				PreparedStatement pst = conn.prepareStatement(SQL, PreparedStatement.RETURN_GENERATED_KEYS);) {
+
+			pst.setString(1, p.getNombre());
+			pst.setString(2, p.getRaza());
+			pst.setFloat(3, p.getPeso());
+			pst.setBoolean(4, p.isVacunado());
+			pst.setString(5, p.getHistoria());
+
+			int affectedsRows = pst.executeUpdate();
+
+			// recuperar el ultimo id generado
+			if (affectedsRows == 1) {
+				try (ResultSet rsKeys = pst.getGeneratedKeys()) {
+					if (rsKeys.next()) {
+						int id = rsKeys.getInt(1);
+						p.setId(id);
+					}
+				}
+			}
+
+		}
+
+		return p;
+	}
+
+	@Override
+	public Perro modificar(Perro p) throws Exception {
 		Perro perro = null;
-		final String SQL = "INSERT INTO perro (nombre, peso, raza, vacunado, historia) VALUES (?, ?);";
+		final String SQL = "UPDATE perro SET nombre = ? , raza =?, peso = ?, vacunado=?, historia=? WHERE id = ?;";
 		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + PATH);
 				PreparedStatement pst = conn.prepareStatement(SQL);) {
 
@@ -82,25 +112,9 @@ public class PerroDAOSqlite implements PerroDao {
 			pst.setString(2, p.getRaza());
 			pst.setFloat(3, p.getPeso());
 			pst.setBoolean(4, p.isVacunado());
-			pst.setString(2, p.getHistoria());
+			pst.setString(5, p.getHistoria());
 
-			pst.executeUpdate(); // CUIDADO no usar executeQuery
-
-		}
-
-		return perro;
-	}
-
-	@Override
-	public Perro modificar(Perro p) throws Exception {
-		Perro perro = null;
-		final String SQL = "UPDATE perro nombre = ? , peso = ? WHERE id = ?;";
-		try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + PATH);
-				PreparedStatement pst = conn.prepareStatement(SQL);) {
-
-			pst.setString(1, p.getNombre());
-			pst.setFloat(2, p.getPeso());
-			pst.setInt(3, p.getId());
+			pst.setInt(6, p.getId());
 
 			pst.executeUpdate(); // CUIDADO no usar executeQuery
 

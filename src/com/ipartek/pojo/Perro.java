@@ -4,6 +4,9 @@ public class Perro extends Mamifero {
 
 	// Atributos, deben ser siempre privados
 	// la forma de manipular estos atributos es a traves de los getteres y settres
+
+	public static final String RAZA_POR_DEFECTO = "Cruce";
+
 	///////////////////////////////////////
 	private int id;
 	private String raza;
@@ -16,7 +19,7 @@ public class Perro extends Mamifero {
 	public Perro() {
 		super("Sin nombre");
 		this.id = 0;
-		this.raza = "Cruce";
+		this.raza = RAZA_POR_DEFECTO;
 		this.peso = 0f;
 		this.isVacunado = false;
 		this.historia = "Erase una vez....";
@@ -27,7 +30,7 @@ public class Perro extends Mamifero {
 	public Perro(String nombre) {
 		super(nombre);
 		this.id = 0;
-		this.raza = "Cruce";
+		this.raza = RAZA_POR_DEFECTO;
 		this.peso = 0f;
 		this.isVacunado = false;
 		this.historia = "Erase una vez....";
@@ -35,8 +38,11 @@ public class Perro extends Mamifero {
 
 	public Perro(String nombre, String raza, float peso) {
 		this(nombre);
-		this.raza = raza;
-		this.peso = peso;
+		// CUIDADO si tienen algo espcial los settres usarlos
+		// this.raza = raza;
+		this.setRaza(raza);
+		// this.peso = peso;
+		this.setPeso(peso);
 	}
 
 	// Getters y setters
@@ -46,8 +52,23 @@ public class Perro extends Mamifero {
 		return raza;
 	}
 
+	/**
+	 * Comprobamos que sea una raza valida, si es null o vacio usamos la constante
+	 * RAZA_POR_DEFECTO
+	 * 
+	 * @param raza
+	 */
 	public void setRaza(String raza) {
-		this.raza = raza;
+		if (raza != null) {
+
+			if (raza.trim().isEmpty()) {
+				raza = RAZA_POR_DEFECTO;
+			}
+			this.raza = raza;
+
+		} else {
+			this.raza = RAZA_POR_DEFECTO;
+		}
 	}
 
 	public float getPeso() {
@@ -89,7 +110,7 @@ public class Perro extends Mamifero {
 	@Override
 	public String toString() {
 		return "Perro [id=" + id + ", Nombre=" + getNombre() + ", raza=" + raza + ", peso=" + peso + ", isVacunado="
-				+ isVacunado + ", historia=" + historia + ", Patas()=" + getPatas() + "]";
+				+ isVacunado + ", historia=" + historia + "]";
 	}
 
 	// Otros metodos

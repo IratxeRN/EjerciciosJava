@@ -24,7 +24,9 @@ public class Ejercicio2 {
 ///////////////////////////////// DAO /////////////////////////////////////////////////////
 		// Este DAO se encarga de realizara la operaciones de CRUD contra la bbdd
 		dao = new PerroDAOSqlite();
+
 		sc = new Scanner(System.in);
+
 		System.out.println("-----  PERRERA  ----");
 		menu();
 
@@ -108,32 +110,39 @@ public class Ejercicio2 {
 ///////////////////////////////////// CREA NUEVO PERRO //////////////////////////////////////
 	private static void crear() {
 
+		boolean esError = true;
+		Perro pNuevo = new Perro();
+
 		System.out.println("--- NUEVO PERRO ---");
-		Perro pNuevo = new Perro("Rintint2", "callejero", 34);
-		try {
-			System.out.println("Nombre:");
-			pNuevo.setNombre(sc.nextLine());
-			System.out.println("Raza:");
-			pNuevo.setRaza(sc.nextLine());
-			System.out.println("Peso:");
-			pNuevo.setPeso(Float.parseFloat(sc.nextLine()));
+		do {
+			try {
+				System.out.println("Nombre:");
+				pNuevo.setNombre(sc.nextLine());
+				System.out.println("Raza:");
+				pNuevo.setRaza(sc.nextLine());
+				System.out.println("Peso:");
+				pNuevo.setPeso(Float.parseFloat(sc.nextLine()));
 
-			System.out.println("Esta vacunado:");
-			if ("Si".equalsIgnoreCase(sc.nextLine())) {
-				pNuevo.setVacunado(true);
-			} else if ("No".equalsIgnoreCase(sc.nextLine())) {
-				pNuevo.setVacunado(false);
+				System.out.println("Esta vacunado:");
+				if ("Si".equalsIgnoreCase(sc.nextLine())) {
+					pNuevo.setVacunado(true);
+				} else if ("No".equalsIgnoreCase(sc.nextLine())) {
+					pNuevo.setVacunado(false);
+				}
+
+				System.out.println("Historia:");
+				pNuevo.setHistoria(sc.nextLine());
+
+				dao.crear(pNuevo); // insert
+				esError = false;
+			} catch (NumberFormatException e) {
+
+				System.out.println("Error");
+
+			} catch (Exception e) {
+				System.out.printf("** el nombre del perro %s ya existe \n", pNuevo.getNombre());
 			}
-
-			System.out.println("Historia:");
-			pNuevo.setHistoria(sc.nextLine());
-
-			dao.crear(pNuevo); // insert
-
-		} catch (Exception e) {
-			System.out.printf("** el nombre del perro %s ya existe \n", pNuevo.getNombre());
-		}
-
+		} while (esError);
 	}
 
 	private static void borrar() {

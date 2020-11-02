@@ -1,4 +1,4 @@
-package com.ipartek.basicosPOO;
+package com.ipartek.ejercicios.poo;
 
 /**
  * Desarrollar un programa que cargue los lados de un triángulo, guardándolos
