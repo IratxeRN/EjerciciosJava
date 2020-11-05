@@ -31,7 +31,7 @@ public class Acumulador implements IModificacion, Cloneable, Serializable {
 
 	@Override
 	public void incremento() {
-		// TODO Auto-generated method stub
+		//
 
 	}
 

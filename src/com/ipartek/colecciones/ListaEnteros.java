@@ -1,4 +1,4 @@
-package com.ipartek.Colecciones;
+package com.ipartek.colecciones;
 
 import java.util.ArrayList;
 

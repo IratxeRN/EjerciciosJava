@@ -100,7 +100,7 @@ public class Patinete implements IVehiculo, AutoCloseable {
 
 	@Override
 	public void close() throws Exception {
-		// TODO Auto-generated method stub
+		//
 
 	}
 

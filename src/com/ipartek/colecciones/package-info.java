@@ -8,4 +8,4 @@
  * @author Leshou
  *
  */
-package com.ipartek.Colecciones;
+package com.ipartek.colecciones;

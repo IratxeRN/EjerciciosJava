@@ -14,18 +14,18 @@ import java.util.Scanner;
 import com.ipartek.pojo.Game;
 
 public class AppGames {
-//TODO ponerlas privadas
-	static final String OPC_LISTADO = "1";
-	static final String OPC_NUEVO = "2";
-	static final String OPC_BAJA = "3";
-	static final String OPC_BUSCAR = "4";
-	static final String OPC_MODIFICAR = "5";
-	static final String OPC_SALIR = "S";
 
-	static final String OPC_TITULO = "1";
-	static final String OPC_YEAR = "2";
-	static final String OPC_DESARROLLADOR = "3";
-	static final String OPC_PLATAFORMA = "4";
+	private static final String OPC_LISTADO = "1";
+	private static final String OPC_NUEVO = "2";
+	private static final String OPC_BAJA = "3";
+	private static final String OPC_BUSCAR = "4";
+	private static final String OPC_MODIFICAR = "5";
+	private static final String OPC_SALIR = "S";
+
+	private static final String OPC_TITULO = "1";
+	private static final String OPC_YEAR = "2";
+	private static final String OPC_DESARROLLADOR = "3";
+	private static final String OPC_PLATAFORMA = "4";
 
 	// variables globales para esta Clase
 	// static significa que solo hay en memoria una variable para eso. Solo esta una

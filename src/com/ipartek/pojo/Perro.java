@@ -1,6 +1,7 @@
 package com.ipartek.pojo;
 
-public class Perro extends Mamifero {
+//si queremos usar la interface Comparable
+public class Perro extends Mamifero implements Comparable<Perro> {
 
 	// Atributos, deben ser siempre privados
 	// la forma de manipular estos atributos es a traves de los getteres y settres
@@ -34,6 +35,11 @@ public class Perro extends Mamifero {
 		this.peso = 0f;
 		this.isVacunado = false;
 		this.historia = "Erase una vez....";
+	}
+
+	public Perro(int id, String nombre) {
+		this(nombre);
+		this.id = id;
 	}
 
 	public Perro(String nombre, String raza, float peso) {
@@ -111,6 +117,11 @@ public class Perro extends Mamifero {
 	public String toString() {
 		return "Perro [id=" + id + ", Nombre=" + getNombre() + ", raza=" + raza + ", peso=" + peso + ", isVacunado="
 				+ isVacunado + ", historia=" + historia + "]";
+	}
+
+	@Override
+	public int compareTo(Perro o) {
+		return (int) (this.peso - o.getPeso());
 	}
 
 	// Otros metodos

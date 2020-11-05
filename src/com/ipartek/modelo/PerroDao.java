@@ -10,7 +10,7 @@ import com.ipartek.pojo.Perro;
  * @author ur00
  *
  */
-public interface PerroDao {
+public interface PerroDao extends IDao<Perro> {
 
 	/**
 	 * lista perros

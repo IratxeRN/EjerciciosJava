@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.ipartek.modelo.PerroDAOSqlite;
+import com.ipartek.modelo.PerroDAOArrayList;
 import com.ipartek.modelo.PerroDao;
 import com.ipartek.pojo.Perro;
 
@@ -40,8 +40,9 @@ public class AppPerrera {
 	// usarlo directamente dese el main
 
 	static Scanner sc = null;
-	static private PerroDao dao = new PerroDAOSqlite();
-	static ArrayList<Perro> perros;
+	// static private PerroDao dao = new PerroDAOSqlite();
+	static private PerroDao dao = PerroDAOArrayList.getInstance();
+	// static ArrayList<Perro> perros;
 	static String opcion = ""; // opcion seleccionada en el menu por el usuario
 	static String opcion2 = ""; // opcion seleccionada en el menu por el usuario
 
@@ -50,7 +51,7 @@ public class AppPerrera {
 
 	public static void main(String[] args) throws SQLException {
 
-		perros = new ArrayList<Perro>();
+		// perros = new ArrayList<Perro>();
 		boolean esSalida = false;
 		sc = new Scanner(System.in);
 
@@ -123,10 +124,9 @@ public class AppPerrera {
 					dato = sc.nextLine();
 					try {
 						p.setNombre(dato);
-						System.out.println(p.getNombre());
 						dao.modificar(p);
 						System.out.println("Nombre modificado correctamente");
-
+						isError = false;
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
 					}
@@ -395,7 +395,7 @@ public class AppPerrera {
 		// dar una fixed lenght al String para nombre
 		ArrayList<Perro> perros = dao.listar();
 		for (Perro perro : perros) {
-			System.out.println(String.format("%s - %15s [%10s]  %4s Kg  %13s %s", perro.getId(), perro.getNombre(),
+			System.out.println(String.format("%s - %-15s [%10s]  %4s Kg  %13s %s", perro.getId(), perro.getNombre(),
 					perro.getRaza(), perro.getPeso(), (perro.isVacunado()) ? "vacunado" : "*Sin Vacunar*",
 					perro.getHistoria()));
 		}

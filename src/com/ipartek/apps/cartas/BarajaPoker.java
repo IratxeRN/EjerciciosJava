@@ -33,7 +33,7 @@ public class BarajaPoker extends Baraja {
 
 	@Override
 	void mostrar() {
-		// TODO Auto-generated method stub
+		//
 
 	}
 
