@@ -1,0 +1,28 @@
+
+header, main{
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    border: 0.2em solid cadetblue;
+    padding: 1em;
+}
+
+
+
+h1, h2, h3 {
+     font-style: italic;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     
+}
+
+h1{
+    color: brown; 
+}
+
+h2{
+    color: chocolate;  
+}
+
+img {
+    border-radius: 5em;
+}
