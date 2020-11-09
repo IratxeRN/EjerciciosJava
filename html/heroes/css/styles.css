@@ -1,3 +1,47 @@
-header{
-    
+
+
+
+@import 'reset.css';
+
+:root{
+
+    --blanco: white;
+    --negro: black;
 }
+
+header{
+    /*background-color: peru;*/
+    color: var(--blanco);
+    /* Gradiente para que se vea el gradiente en chrome*/
+    background-image: -webkit-linear-gradient(top, #D7D 0%, #068 100%);
+     /* Gradiente para que se vea el gradiente en Opera*/
+    background-image: -o-linear-gradient(top, #D7D 0%, #068 100%);
+     /* Gradiente para que se vea el gradiente en Mozilla*/
+    background-image: -moz-linear-gradient(top, #D7D 0%, #068 100%);
+     /* Gradiente para que se vea el gradiente en Microsoft Explorer*/
+     background-image: -ms-linear-gradient(top, #D7D 0%, #068 100%);
+    /*Regla basica*/
+    background-image: linear-gradient(top, #D7D 0%, #068 100%);
+}
+section{
+    background-color: antiquewhite;
+}
+footer{
+    background-color: blanchedalmond;
+}
+h1{
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--negro);
+}
+/*TAMBIEN SE PUEDE PONER EN EL LINK*/
+@media print {
+    body { font-size: 10pt }
+  }
+  @media screen {
+    body { font-size: 13px }
+  }
+  @media screen, print {
+    body { line-height: 1.2 }
+  }
+  

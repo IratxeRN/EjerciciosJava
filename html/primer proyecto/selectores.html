@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores Basicos</title>
+    <style>
+/*Estilos dentro para no tener que hacer un css */
+
+/*Selector universal*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Selector tipo etiqueta*/
+p{
+    color: aqua;
+}
+h2, h3 {
+  color: #8A8E27;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Selector descendente*/
+
+h1 span{
+    text-decoration: dotted;
+    font-size: 50px;
+}
+
+h2 a {
+    color:chocolate;
+    text-decoration: none;
+    font-size: 30px;
+}
+/*Selector de clase*/
+
+.rojo{
+    color: red;
+    text-shadow: #8A8E27;
+    font-size: 25px;
+}
+
+.destacado{
+    padding: 0.5em;
+  border: 1px solid #98be10;
+  background: #f6feda;
+}
+
+p span.destacado{
+    padding: 0.5em;
+  border: 1px solid #be1092;
+  background: #fdeefd;
+}
+    </style>
+</head>
+<body>
+    <h1>Selectores <span>basicos</span></h1>
+    <p>Lorem <span class=destacado>ipsum dolor</span sit amet <span class="rojo">consectetur adipisicing</span> elit. Ea cum, sint sapiente totam doloribus dolore culpa perferendis! Mollitia architecto tempore quae, quasi iure distinctio, blanditiis maxime nostrum rerum quod saepe?</p>
+    <h2 class="destacado">Prueba <a href="#">h2</a></h2>
+    <h2>Hola mundo h2</h2>
+    <a href=#>A lalala</a>
+    <h3>Prueba h3</h3>
+
+
+
+</body>
+</html>
