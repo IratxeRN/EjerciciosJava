@@ -9,12 +9,17 @@
 :root {
   --azul: #003580;
   --blanco: #fff;
-  --negro: #000;
+  --negro: 
   --marron: peru;
   --verde: lime;
   --rosa: pink;
   --a_nav: #003580;
   --main: #fafafa;
+  /*--color-primary: #003580;*/
+  --color-primary:#ed1d24;
+  --color-accent:#000; ;
+  --color-pie: #f7f7f7;
+  --color-pie-dark: #6f777b;
 }
 /* estilos a todas las etiquetas */
 
@@ -45,23 +50,25 @@ h6 {
 }
 
 h2 {
-  color: #03a9f4;
+  color:  var(--color-primary);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:2em ;
 }
 
 p {
   margin: 1rem 0;
 }
 
-header,
+
 main,
-.pie, .container {
+.pie, .container, .cabeza {
   max-width: 1024px;
   box-sizing: border-box;
   margin: auto; /* centrar el contenido en  horizontal*/
 }
 
 header {
-  background-color: #003580;
+  background-color:var(--color-accent);
   padding: 1rem;
 }
 
@@ -75,9 +82,9 @@ a {
   cursor: pointer;
 }
  nav#header {
-  background: #f7f7f7;
-  border-bottom: 1px solid #dee0e2;
-  color: #003580;
+  background: var(--color-primary);
+  border-bottom: 1px solid var(--negro);
+  color:var(--blanco);
   padding: 10px;
   position: sticky;
   top:0;
@@ -98,13 +105,14 @@ nav#header ul li {
 }
 
 nav#header ul li:hover {
-  background-color: #03a9f4;
+  background-color: var(--color-accent);
 }
 
 nav#header a {
-  color: var(--a_nav);
+  color: var(--blanco);
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 section {
@@ -126,18 +134,19 @@ article {
 }
 
 footer {
-  background: #f7f7f7;
+  background: var(--color-pie);
   border-top: 1px solid #dee0e2;
   margin: auto;
-  padding: 2rem;
+  padding: 1rem;
   
 }
 
 footer a,
 li {
-  color: #6f777b;
+  color: var(--color-pie-dark);
   text-decoration: none;
   list-style: none;
+  line-height: 1.5em;
 }
 /*
 footer section {
@@ -151,7 +160,6 @@ footer section {
   padding: 2rem;
   padding-left: 2rem;
   margin: auto;
-  
 }
 
 img {
@@ -159,11 +167,16 @@ img {
 }
 .alinear_dcha{
     text-align: right;
+    width: 100%;
     
 }
 
 .pie{
   display: flex;
   justify-content: space-between;
-  background-color: antiquewhite;
+}
+
+.comic{
+  width:210px; 
+  height:360px;
 }
