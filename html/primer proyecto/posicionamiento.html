@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento</title>    
+</head>
+<body>
+    <style>
+        h1 { color: teal; }
+    </style>
+    <h1>Posicionamiento</h1>
+    <a href="https://uniwebsidad.com/libros/css/capitulo-5" target="_blank" >Tutorial</a>
+
+
+    <h2>Posicionamiento Relativo</h2>
+    <style>
+        #pr { background-color: grey; padding: 30px; }
+        #pr span { background-color: pink; padding: 10px;}
+        #pr .relativo { background-color: orange; position: relative; top: 25px; left: 30px;}
+    </style>
+    <section id="pr">
+        <span class="relativo">Contenido 1</span>
+        <span>Contenido 2 un poco mas largo</span>
+        <span>Contenido 3</span>
+    </section>
+
+
+
+    <h2>Posicionamiento Absoluto</h2>
+    <p>El truco para posicionar un elemento de forma absoluta respecto a su contenedor es:</p>
+    <p>Poner el contenedor con <b>position: relative</b></p>
+    <style>
+        #abs { background-color: grey; padding: 30px; position: relative;}
+        #abs span { background-color: pink; padding: 10px;}
+        #abs .absoluto { background-color: red; position: absolute; top: 25px; left: 30px; }
+    </style>
+    <section id="abs">
+        <span class="absoluto">ABSOLUTO</span>
+        <span>Contenido 2 un poco mas largo</span>
+        <span>Contenido 3</span>
+    </section>
+
+    <h2>Poscionamiento Fijo</h2>
+    <p>
+      Funciona igual que el absoluto, pero el elemneto es FIJO respecto a la
+      ventan del navegador
+    </p>
+    <p>Hacer scroll para ver como esta de forma fija</p>
+
+    <h2>Poscionamiento Fijo</h2>
+    <p>
+      Funciona igual que el absoluto, pero el elemneto es FIJO respecto a la
+      ventan del navegador
+    </p>
+    <p>Hacer scroll para ver como esta de forma fija</p>
+    <!-- 
+        alinear abajo a la derecha, 
+        poner que sea un circulo, 
+        meter un 'anchor' para que la pulsar suba hasta arriba
+    -->
+    <style>
+      .fijo {
+        position: fixed;
+        background-color: rgba(255, 196, 0, 1);
+        padding: 30px;
+        bottom: 30px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        box-shadow: darkgreen;
+      }
+      a {
+        text-decoration: none;
+        color: azure;
+        font-size: 2rem;
+      }
+    </style>
+
+    <span class="fijo"><a href="#top">^</a></span>
+
+
+    <style>
+        .btn_top {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: orange;      
+            -webkit-box-shadow: -4px 5px 9px 1px rgba(0,0,0,0.49);
+            -moz-box-shadow: -4px 5px 9px 1px rgba(0,0,0,0.49);
+            box-shadow: -4px 5px 9px 1px rgba(0,0,0,0.49);          
+        }
+
+        .btn_top:hover{
+            background-color: #d66718;
+            -webkit-box-shadow: 1px 1px 17px 8px rgba(0,0,0,0.49);
+            -moz-box-shadow: 1px 1px 17px 8px rgba(0,0,0,0.49);
+            box-shadow: 1px 1px 17px 8px rgba(0,0,0,0.49);   
+            transition: 1s;     
+        } 
+
+        .btn_top a {
+            color: #FFF;
+            font-size: 4rem;
+            font-weight: 100;
+            text-decoration: none;            
+            padding-left: 11px;
+            font-family: Arial;
+        }
+
+    </style>
+    <span class="btn_top"><a href="#top">^</span>
+
+
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis
+      ea nostrum. Voluptatibus quaerat illum tempore voluptas maxime debitis
+      illo? Eius sed modi illo maiores, assumenda est corrupti obcaecati
+      similique!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis
+        ea nostrum. Voluptatibus quaerat illum tempore voluptas maxime debitis
+        illo? Eius sed modi illo maiores, assumenda est corrupti obcaecati
+        similique!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis
+        ea nostrum. Voluptatibus quaerat illum tempore voluptas maxime debitis
+        illo? Eius sed modi illo maiores, assumenda est corrupti obcaecati
+        similique!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis
+        ea nostrum. Voluptatibus quaerat illum tempore voluptas maxime debitis
+        illo? Eius sed modi illo maiores, assumenda est corrupti obcaecati
+        similique!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis
+        ea nostrum. Voluptatibus quaerat illum tempore voluptas maxime debitis
+        illo? Eius sed modi illo maiores, assumenda est corrupti obcaecati
+        similique!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis
+        ea nostrum. Voluptatibus quaerat illum tempore voluptas maxime debitis
+        illo? Eius sed modi illo maiores, assumenda est corrupti obcaecati
+        similique!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis
+        ea nostrum. Voluptatibus quaerat illum tempore voluptas maxime debitis
+        illo? Eius sed modi illo maiores, assumenda est corrupti obcaecati
+        similique!
+      </p>
+  </body>
+</html>
