@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heroes</title>
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/styles_impresora.css" type="text/css" media="print">
+
 </head>
 <body>
     <header>
-        <h1>MarvelDCpedia</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="heroes.html">Heroes</a></li>
-                <li><a href="villanos.html">Villanos</li>
-                <li><a href="comics.html">Comics</a></li>
-                <li><a href="acerca.html">Acerca de</a></li>
-            </ul>
-        </nav>
+        <div class="cabeza">
+            <h1>MarvelDCpedia</h1>
+        </div>
+        
+        
     </header>
+    <nav id="header">
+        <ul class="container">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="heroes.html">Heroes</a></li>
+            <li><a href="villanos.html">Villanos</li>
+            <li><a href="comics.html">Comics</a></li>
+            <li><a href="acerca.html">Acerca de</a></li>
+        </ul>
+    </nav>
+    <main>
     <section>
         <article>
             <h2>Quién soy</h2>
@@ -40,31 +47,25 @@
             </article>
     
     </section>
-<footer>
-    <table>
-        <tr>
-            <td>
+    </main>
+    <footer>
+        <div class="pie">
+            <section>
                 <ul>
                     <li>Coockies</li>
                     <li>Asprectos Legales</li>
                     <li>Contacto</li>
                 </ul>
-            </td>
-            <td>
-                <img src="imgs/marvel_logo.gif" alt="Marvel logo"/>
-                <img src="imgs/dc_logo.gif" alt="DC logo"/>
-            </td>
-            <td>
-                <ul>
-                    <li><a href="https://blogdesuperheroes.es/" target="_blanck">Blog del Superheroe</a></li>
-                    <li><a href="https://www.universomarvel.com/">Universo Marvel</a></li>
-                    <li><a href="https://www.superheroeweb.com/">La tienda del Superheroe</a></li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-</footer>
-
+            </section>
+            <section><img class="logo" src="imgs/marvel_logo.gif" alt="Marvel logo"/>
+                <img class="logo" src="imgs/dc_logo.gif" alt="DC logo"/></section>
+            <section><ul class="alinear_dcha">
+                <li><a href="https://blogdesuperheroes.es/" target="_blanck">Blog del Superheroe</a></li>
+                <li><a href="https://www.universomarvel.com/">Universo Marvel</a></li>
+                <li><a href="https://www.superheroeweb.com/">La tienda del Superheroe</a></li>
+            </ul></section>
+        </div>
+    </footer>
     
 </body>
 </html>

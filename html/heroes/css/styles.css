@@ -9,7 +9,7 @@
 :root {
   --azul: #003580;
   --blanco: #fff;
-  --negro: 
+  --negro: #000; 
   --marron: peru;
   --verde: lime;
   --rosa: pink;
@@ -17,7 +17,7 @@
   --main: #fafafa;
   /*--color-primary: #003580;*/
   --color-primary:#ed1d24;
-  --color-accent:#000; ;
+  --color-accent:#000; 
   --color-pie: #f7f7f7;
   --color-pie-dark: #6f777b;
 }
@@ -32,7 +32,7 @@ body {
   text-align: justify;
   box-sizing: content-box;
   font-family: sans-serif;
-  line-height: 1.15;
+  line-height: 1.30;
 }
 
 h1 {
@@ -52,16 +52,15 @@ h6 {
 h2 {
   color:  var(--color-primary);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size:2em ;
+  font-size:1.5em ;
 }
 
 p {
   margin: 1rem 0;
 }
 
-
 main,
-.pie, .container, .cabeza {
+.pie, .container, .cabeza, .lista_comics {
   max-width: 1024px;
   box-sizing: border-box;
   margin: auto; /* centrar el contenido en  horizontal*/
@@ -127,6 +126,10 @@ article {
   padding: 1em;
 }
 
+article ol{
+list-style-type: decimal;
+}
+
 .logo {
   width: 50px;
   height: 50px;
@@ -164,6 +167,8 @@ footer section {
 
 img {
   margin: auto;
+  display:block ;
+  margin-bottom: 0.2em;
 }
 .alinear_dcha{
     text-align: right;
@@ -177,6 +182,38 @@ img {
 }
 
 .comic{
+  display: inline-block;
   width:210px; 
   height:360px;
+  padding: 2px;
 }
+
+section ol{
+  padding: 1rem 1rem 1rem 5rem;
+  background-color: #f8f7f7;
+  border: 1px solid #6f777b ;
+}
+
+section ol li {
+  list-style: decimal;
+}
+
+.lista_comics{
+  display: flex;
+  justify-content: space-between;
+}
+
+.subir{
+  position: fixed;
+  bottom: 2px;
+  left: 150px;
+}
+
+
+@media (max-width: 768px) {
+
+  
+  section{
+    flex-wrap: wrap;
+   }
+} 
