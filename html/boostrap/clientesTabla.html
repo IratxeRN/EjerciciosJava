@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <title>Tablas, Figures, Alert</title>
+  </head>
+  <body class="container-fluid">
+    
+    <nav class="row navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#">CLIENTES</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <nav aria-label=" breadcrumb">
+      <ol class="row breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+    
+    <h4>Example heading <span class="badge badge-secondary">New</span></h4>
+
+    <div class="table-responsive"> 
+      <table class="table table-striped table-bordered">
+        <caption>
+          Listado de clientes
+        </caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Nombre1</td>
+            <td>Apellidos1Apellidos1Apellidos1Apellidos1Apellidos1</td>
+            <td>
+              <a class="btn btn-primary btn-sm" href="#">Editar</a>
+              <a class="btn btn-danger btn-sm" href="#">Borrar</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Nombre2</td>
+            <td>Apellidos2</td>
+            <td>
+              <a class="btn btn-primary btn-sm" href="#">Editar</a>
+              <a class="btn btn-danger btn-sm" href="#">Borrar</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Nombre3</td>
+            <td>Apellidos3</td>
+            <td>
+              <a class="btn btn-primary btn-sm" href="#">Editar</a>
+              <a class="btn btn-danger btn-sm" href="#">Borrar</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Nombre4</td>
+            <td>Apellidos4</td>
+            <td>
+              <a class="btn btn-primary btn-sm" href="#">Editar</a>
+              <a class="btn btn-danger btn-sm" href="#">Borrar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="figure">
+      <img src="img/monedas2.jpg" class="figure-img img-thumbnail" />
+      <figcaption class="figure-caption text-right">Colección de monedas</figcaption>
+    </figure>
+
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      <strong>Kaixo</strong> Aqui estamos probando las alertas.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+
+    <div class="row row-cols-1 row-cols-md-4">
+      <div class="col mb-4">
+        <div class="card h-100">
+          <img src="img/monedas2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100">
+          <img src="img/monedas2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a short card.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100">
+          <img src="img/monedas2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    
+
+
+    <form <form class="needs-validation" novalidate autocomplete="off">
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputEmail3" required  pattern="[A-Z][a-z]*"  placeholder="Deber ser en mayusculas y texto">
+      <div class="invalid-feedback">Debe introducir bien el dato</div>
+      <div class="valid-feedback">Esta todo ok</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3">
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <div class="col-sm-2">Checkbox</div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1">
+          <label class="form-check-label" for="gridCheck1">
+            Example checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-sm-2  col-sm-10">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div class="input-group is-invalid">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="validatedInputGroupPrepend">€</span>
+        </div>
+        <input type="number" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required>
+      </div>
+      <div class="invalid-feedback">
+        Example invalid input group feedback
+      </div>
+    </div>
+
+
+
+  </form>
+
+
+
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
+
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit placeat exercitationem ipsum rem, ab autem corporis est veritatis magnam veniam laboriosam illum dignissimos harum consectetur a blanditiis! Modi, eveniet.
+    Inventore, delectus tempore enim dolor voluptate blanditiis rerum facere accusamus. Nobis ducimus, iusto amet, magni ratione perspiciatis doloremque deleniti voluptatem sit porro velit tempore natus non perferendis neque est doloribus.
+    Impedit ea facere, recusandae asperiores unde tempora fugit facilis? Fugit perspiciatis iusto distinctio commodi non sequi nulla dignissimos vel similique repellendus, dicta quidem veniam, pariatur hic ut labore, odit accusantium.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit placeat exercitationem ipsum rem, ab autem corporis est veritatis magnam veniam laboriosam illum dignissimos harum consectetur a blanditiis! Modi, eveniet.
+    Inventore, delectus tempore enim dolor voluptate blanditiis rerum facere accusamus. Nobis ducimus, iusto amet, magni ratione perspiciatis doloremque deleniti voluptatem sit porro velit tempore natus non perferendis neque est doloribus.
+    Impedit ea facere, recusandae asperiores unde tempora fugit facilis? Fugit perspiciatis iusto distinctio commodi non sequi nulla dignissimos vel similique repellendus, dicta quidem veniam, pariatur hic ut labore, odit accusantium.
+  </p>
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="js/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

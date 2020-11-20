@@ -1,0 +1,88 @@
+nav .container{
+
+    background-color: rgb(69, 168, 235) !important;
+}
+
+body, h1, h2, h3, h4, h5, h6, p  {
+    font-family: 'Bitter', serif !important;
+}
+
+body{
+    background-color: #9e9e9e26 !important;
+}
+
+h1{
+    font-size: 25px !important;
+    color:rgb(59, 68, 197) !important;
+}
+
+p {
+    
+    font-size: 12px !important;
+}
+
+.post-preview a, .post-meta a , navbar-brand a {
+    font-weight: bold !important;
+}
+
+
+.post-preview a:visited, .post-meta a:visited, navbar-brand a:visited{
+    color: mediumorchid !important;
+}
+
+.post-preview a:hover, .post-meta a:hover, navbar-brand a:hover{
+    color: red !important;
+    
+}
+
+
+caption {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 5px 0;
+    border-top:1px solid #FFF;
+    border-bottom:1px solid #FFF;
+}
+
+.site-heading h1{
+    font-size: 25px !important;
+    color:blue !important;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr{
+      background-color: #FFF;
+  }
+  
+  tr:nth-child(even){
+      background-color: #daf5f8;
+  }
+  
+  th, caption {
+    background-color: #2a858f;
+    color: #ffffff;
+  }
+
+
+  .centrar{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+  .centrar img{
+      width: 400px;
+    font-weight: 700;
+  }
+  
