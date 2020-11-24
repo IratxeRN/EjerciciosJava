@@ -1,0 +1,74 @@
+
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.rrss{
+    width: 60px;
+    height: 50px;
+}
+
+
+
+.descuento{
+    font-size: 1em;
+}
+.small{
+    font-size: 0.7em;
+    text-decoration:line-through;
+}
+
+.precio{
+    color:red;
+}
+
+
+
+@media (max-width: 3840px) {
+
+    .fa {
+        visibility: hidden;
+    }
+    
+    .btn_top {
+        visibility: hidden;
+    }
+    
+}    
+
+
+@media ( max-width: 576px  ) {
+
+    main article {
+        width: 100%; 
+    }   
+    
+    .fa {
+        visibility: visible;
+    }
+
+    .btn_top {
+        position: fixed;
+        bottom: 50px;
+        right: 100px;
+        width: 50px;
+        height: 50px;
+        z-index: 50;
+        visibility: visible;
+    }
+    
+    .btn_top a:hover{
+        color: rgb(226, 19, 19);
+    } 
+    
+    .btn_top a {
+        color: rgb(4, 0, 255);
+        font-size: 4rem;
+        font-weight: 100;
+        text-decoration: none;            
+        padding-left: 11px;
+        
+    }
+
+} 
