@@ -12,10 +12,7 @@ header{
     background-color: rgb(255, 255, 255);
 }
 
-
-
 footer{
-    
     background-color: #aeae2d
 }
 main{
@@ -35,4 +32,23 @@ p{
 
 .navbar{
     background-color: #575717 !important;
+}
+
+
+.d-inline{
+margin: 0 0.1em 0.2em 0.2em;
+background-color: #aeae2d !important;
+}
+
+.d-inline a{
+    color: #fff  !important;
+    text-decoration: none;
+}
+
+.d-inline:hover{
+    background-color: #575717 !important;
+    }
+
+.nav-item:hover{
+background-color: #aeae2d !important;
 }
